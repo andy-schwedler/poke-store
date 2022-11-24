@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function ShoppingItem({ name, url }) {
+export default function ShoppingItem({ name, url, handleAddItem }) {
   const [infos, setInfos] = useState({});
 
   useEffect(() => {
@@ -11,9 +11,10 @@ export default function ShoppingItem({ name, url }) {
     }
     startFetching();
   }, [url]);
+
   return (
     <>
-      <div>
+      <ul>
         <img
           src={infos.sprites?.default}
           width="50px"
@@ -22,7 +23,10 @@ export default function ShoppingItem({ name, url }) {
         />
         <li>{name}</li>
         <li>{infos.cost} ¥</li>
-      </div>
+        <button onClick={handleAddItem} type="button">
+          Add Item
+        </button>
+      </ul>
     </>
   );
 }
