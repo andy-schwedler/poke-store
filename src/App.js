@@ -17,14 +17,13 @@ function App() {
     }
     startFetching();
   }, []);
+
   return (
     <>
       <Header />
-      <ul>
-        {items.map((item) => (
-          <ShoppingItem key={item.name} name={item.name} />
-        ))}
-      </ul>
+      {items.map((item) => (
+        <ShoppingItem key={item.name} name={item.name} url={item.url} />
+      ))}
     </>
   );
 }
