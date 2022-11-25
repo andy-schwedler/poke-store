@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <>
-      <h1>Poke Mart Online Shop</h1>
+      <h1 className="header">Poke Items Online Shop</h1>
     </>
   );
 }

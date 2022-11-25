@@ -8,7 +8,7 @@ console.clear();
 function App() {
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState({});
-
+  console.log(cart);
   useEffect(() => {
     async function startFetching() {
       const response = await fetch("https://pokeapi.co/api/v2/item/");
@@ -22,7 +22,6 @@ function App() {
   function handleAddItem(name) {
     setCart([...cart, { name }]);
   }
-  console.log(cart);
 
   return (
     <>

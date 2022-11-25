@@ -14,7 +14,7 @@ export default function ShoppingItem({ name, url, handleAddItem }) {
 
   return (
     <>
-      <ul>
+      <ul className="item--container">
         <img
           src={infos.sprites?.default}
           width="50px"
