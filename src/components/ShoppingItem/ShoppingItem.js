@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-export default function ShoppingItem({ name, url, handleAddItem }) {
+export default function ShoppingItem({ name, url, onAddItem }) {
   const [infos, setInfos] = useState({});
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function ShoppingItem({ name, url, handleAddItem }) {
         />
         <li>{name}</li>
         <li>{infos.cost} ¥</li>
-        <StyledButton onClick={handleAddItem} type="button">
+        <StyledButton onClick={() => onAddItem(infos)} type="button">
           Add Item
         </StyledButton>
       </StyledItemContainer>
@@ -32,7 +32,7 @@ export default function ShoppingItem({ name, url, handleAddItem }) {
   );
 }
 
-const StyledItemContainer = styled.ul`
+export const StyledItemContainer = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -7,18 +7,15 @@ const GlobalStyle = createGlobalStyle`
     src: local("pokeSolid"), 
     url(${pokeSolid}) format("truetype");}
 
+    #root{
+      align-items: center;
+    }
 
 body {
     display: flex;
     justify-content: center;
-    width: 90%;
-  }
+    }
+
   `;
 
 export default GlobalStyle;
-
-/*@font-face {
-    font-family: "pokeSolid";
-    src: local("pokeSolid"), 
-    url(${pokeSolid}) format("truetype");
-  }*/
