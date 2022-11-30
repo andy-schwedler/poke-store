@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function ShoppingItem({ name, url, onAddItem }) {
-  const [infos, setInfos] = useState({});
+  const [infos, setInfos] = useState([]);
 
   useEffect(() => {
     async function startFetching() {

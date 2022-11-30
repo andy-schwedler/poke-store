@@ -1,22 +1,26 @@
-import { Fragment } from "react";
-import { StyledItemContainer } from "../ShoppingItem/ShoppingItem";
+import styled from "styled-components";
+
 export function Cart({ cartItems }) {
   return (
     <>
-      <h2>Cart</h2>
+      <h2>🛒</h2>
       {cartItems.map((cartItem) => (
-        <StyledItemContainer key={cartItem.id}>
-          <img
-            src={cartItem.sprites?.default}
-            width="50px"
-            height="50px"
-            alt={cartItem.name}
-          ></img>
+        <StyledCartListItem key={cartItem.id}>
           <li>{cartItem.name}</li>
           <li>{cartItem.cost} ¥</li>
-        </StyledItemContainer>
+        </StyledCartListItem>
       ))}
       <hr></hr>
     </>
   );
 }
+
+const StyledCartListItem = styled.ul`
+  list-style-type: none;
+  gap: 20px;
+  color: orangered;
+  margin: 5px;
+  width: 100px;
+  padding-left: 0px;
+  text-align: left;
+`;
