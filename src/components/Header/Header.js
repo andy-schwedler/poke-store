@@ -1,7 +1,13 @@
+import styled from "styled-components";
+
 export default function Header() {
   return (
     <>
-      <h1>Poke Mart Online Shop</h1>
+      <StyledHeader>Poke Items Online Shop</StyledHeader>
     </>
   );
 }
+
+const StyledHeader = styled.h1`
+  font-family: "pokeSolid";
+`;
