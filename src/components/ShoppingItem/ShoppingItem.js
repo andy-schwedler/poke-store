@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function ShoppingItem({ name, url, onAddItem }) {
-  const [infos, setInfos] = useState([]);
+  const [storeItem, setStoreItem] = useState([]);
 
   useEffect(() => {
     async function startFetching() {
       const response = await fetch(url);
       const data = await response.json();
-      setInfos(data);
+      setStoreItem(data);
     }
     startFetching();
   }, [url]);
@@ -17,14 +17,14 @@ export default function ShoppingItem({ name, url, onAddItem }) {
     <>
       <StyledItemContainer>
         <img
-          src={infos.sprites?.default}
+          src={storeItem.sprites?.default}
           width="50px"
           height="50px"
-          alt={infos.name}
+          alt={storeItem.name}
         />
         <li>{name}</li>
-        <li>{infos.cost} ¥</li>
-        <StyledButton onClick={() => onAddItem(infos)} type="button">
+        <li>{storeItem.cost} ¥</li>
+        <StyledButton onClick={() => onAddItem(storeItem)} type="button">
           Add Item
         </StyledButton>
       </StyledItemContainer>
