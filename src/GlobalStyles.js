@@ -8,13 +8,11 @@ const GlobalStyle = createGlobalStyle`
     url(${pokeSolid}) format("truetype");}
 
     #root{
+
       align-items: center;
     }
 
-body {
-    display: flex;
-    justify-content: center;
-    }
+
 
   `;
 

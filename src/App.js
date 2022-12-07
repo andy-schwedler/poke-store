@@ -29,7 +29,7 @@ function App() {
       <Cart cartItems={cart} />
       {items.map((item) => (
         <ShoppingItem
-          key={item.name}
+          key={item.url}
           name={item.name}
           url={item.url}
           onAddItem={handleAddItem}
