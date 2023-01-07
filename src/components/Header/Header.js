@@ -10,4 +10,5 @@ export default function Header() {
 
 const StyledHeader = styled.h1`
   font-family: "pokeSolid";
+  color: blue;
 `;
